@@ -25,19 +25,6 @@ public class MessageProcessorService {
         Mono<ServiceBusReceiverAsyncClient> monoReceiver = serviceBusReceiverFactory.getServiceBusReceiverClient(sessionId);
         log.info("current session id: {}", sessionId);
 
-        //why go through the trouble of using a Disposable, when you can also delete the item in a flux in case error happens
-        //just subscribe directly to the source?
-
-//        Disposable subscription = monoReceiver.map(
-//                x -> this.receiveMessages(x)
-//                        .onErrorContinue((a, t) -> {
-//                            log.error("HPLOG " + a.getMessage());
-//                        })
-//                        .subscribe(
-//                                this::processMessage,
-//                                error -> log.error("Could not receive message over service bus. [session: {}, error: {}]", sessionId, error)
-//                        )).subscribe();
-
         Disposable subscription = Flux.usingWhen(
                         monoReceiver,
                         this::receiveMessages,
@@ -70,7 +57,7 @@ public class MessageProcessorService {
             return receiver.receiveMessages().onErrorContinue((a, t) -> log.error("Exception in original Message: [{}] [sessionId={}]", a.getMessage(), receiver.getSessionId(), a));
         } catch (Exception e){
             log.error("Exception receiving message via ServiceBusReceiverAsyncClient [sessionId={}]", receiver.getSessionId(), e);
-            return Flux.empty();  //flux.empty is finite
+            return Flux.empty();
         }
     }
 
@@ -78,13 +65,5 @@ public class MessageProcessorService {
 
     private void processMessage(ServiceBusReceivedMessage message) {
         log.info("Message with id: {} has been processed. \n Session: {}", message.getMessageId(), message.getSessionId());
-//        try{
-//            ii++;
-//            if (ii == 3){
-//                throw new RuntimeException("Exception in processing Message");
-//            }
-//        }catch (Exception e){
-//            log.error(e.getMessage());
-//        }
     }
 }

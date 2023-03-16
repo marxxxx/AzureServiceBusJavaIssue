@@ -1,0 +1,8 @@
+messaging:
+  connectionStringQueueSender: ${SERVICE_BUS_QUEUE_SENDER_CONN_URL}
+  connectionStringQueueListener: ${SERVICE_BUS_QUEUE_LISTENER_CONN_URL}
+  connectionStringChargePointTopicSender: ${SERVICE_BUS_QUEUE_CHARGE_POINT_TOPIC_SENDER_CONN_URL}
+  connectionStringChargePointTopicListener: ${SERVICE_BUS_QUEUE_CHARGE_POINT_TOPIC_LISTENER_CONN_URL}
+  queueName: ${SERVICE_BUS_QUEUE_NAME}
+  chargePointTopic: ${SERVICE_BUS_CHARGE_POINT_TOPIC_NAME}
+  chargePointTopicSubscription: ${SERVICE_BUS_CHARGE_POINT_TOPIC_SUBSCRIPTION_NAME}

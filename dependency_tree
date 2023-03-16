@@ -1,0 +1,191 @@
+[INFO] --- maven-dependency-plugin:3.1.2:tree (default-cli) @ service-bus-receiver ---
+[INFO] Verbose not supported since maven-dependency-plugin 3.0
+[INFO] com.netural:service-bus-receiver:jar:1.0.0-SNAPSHOT
+[INFO] +- com.azure:azure-messaging-servicebus:jar:7.13.2:compile
+[INFO] |  +- com.azure:azure-core:jar:1.36.0:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.12.5:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-core:jar:2.12.5:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.12.5:compile
+[INFO] |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.12.5:compile
+[INFO] |  |  +- com.fasterxml.woodstox:woodstox-core:jar:6.4.0:compile
+[INFO] |  |  +- org.slf4j:slf4j-api:jar:1.7.32:compile
+[INFO] |  |  \- io.projectreactor:reactor-core:jar:3.4.11:compile
+[INFO] |  |     \- org.reactivestreams:reactive-streams:jar:1.0.3:compile
+[INFO] |  +- com.azure:azure-core-amqp:jar:2.8.2:compile
+[INFO] |  |  +- com.microsoft.azure:qpid-proton-j-extensions:jar:1.2.4:compile
+[INFO] |  |  \- org.apache.qpid:proton-j:jar:0.33.8:compile
+[INFO] |  +- com.azure:azure-core-http-netty:jar:1.13.0:compile
+[INFO] |  |  +- io.netty:netty-handler:jar:4.1.69.Final:compile
+[INFO] |  |  |  +- io.netty:netty-common:jar:4.1.69.Final:compile
+[INFO] |  |  |  +- io.netty:netty-resolver:jar:4.1.69.Final:compile
+[INFO] |  |  |  \- io.netty:netty-transport:jar:4.1.69.Final:compile
+[INFO] |  |  +- io.netty:netty-handler-proxy:jar:4.1.69.Final:compile
+[INFO] |  |  |  \- io.netty:netty-codec-socks:jar:4.1.69.Final:compile
+[INFO] |  |  +- io.netty:netty-buffer:jar:4.1.69.Final:compile
+[INFO] |  |  +- io.netty:netty-codec:jar:4.1.69.Final:compile
+[INFO] |  |  +- io.netty:netty-codec-http:jar:4.1.69.Final:compile
+[INFO] |  |  +- io.netty:netty-codec-http2:jar:4.1.69.Final:compile
+[INFO] |  |  +- io.netty:netty-transport-native-unix-common:jar:4.1.69.Final:compile
+[INFO] |  |  +- io.netty:netty-transport-native-epoll:jar:linux-x86_64:4.1.69.Final:compile
+[INFO] |  |  +- io.netty:netty-transport-native-kqueue:jar:osx-x86_64:4.1.69.Final:compile
+[INFO] |  |  +- io.netty:netty-tcnative-boringssl-static:jar:2.0.44.Final:compile
+[INFO] |  |  \- io.projectreactor.netty:reactor-netty-http:jar:1.0.12:compile
+[INFO] |  |     +- io.netty:netty-resolver-dns:jar:4.1.69.Final:compile
+[INFO] |  |     |  \- io.netty:netty-codec-dns:jar:4.1.69.Final:compile
+[INFO] |  |     +- io.netty:netty-resolver-dns-native-macos:jar:osx-x86_64:4.1.69.Final:compile
+[INFO] |  |     \- io.projectreactor.netty:reactor-netty-core:jar:1.0.12:compile
+[INFO] |  \- com.fasterxml.jackson.dataformat:jackson-dataformat-xml:jar:2.12.5:compile
+[INFO] |     +- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.12.5:compile
+[INFO] |     \- org.codehaus.woodstox:stax2-api:jar:4.2.1:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.26:provided
+[INFO] +- com.azure:azure-core-serializer-json-jackson:jar:1.2.18:compile
+[INFO] +- com.azure:azure-messaging-eventhubs:jar:5.12.1:compile
+[INFO] +- com.microsoft.azure:azure:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-client-runtime:jar:1.7.12:compile
+[INFO] |  |  \- com.microsoft.rest:client-runtime:jar:1.7.12:compile
+[INFO] |  |     +- com.google.guava:guava:jar:20.0:compile
+[INFO] |  |     +- com.squareup.retrofit2:retrofit:jar:2.6.4:compile
+[INFO] |  |     +- com.squareup.okhttp3:okhttp:jar:3.14.9:compile
+[INFO] |  |     |  \- com.squareup.okio:okio:jar:1.17.2:compile
+[INFO] |  |     +- com.squareup.okhttp3:logging-interceptor:jar:3.14.9:compile
+[INFO] |  |     +- com.squareup.okhttp3:okhttp-urlconnection:jar:3.14.9:compile
+[INFO] |  |     +- com.squareup.retrofit2:converter-jackson:jar:2.6.4:compile
+[INFO] |  |     +- com.fasterxml.jackson.datatype:jackson-datatype-joda:jar:2.12.5:compile
+[INFO] |  |     +- org.apache.commons:commons-lang3:jar:3.12.0:compile
+[INFO] |  |     \- com.squareup.retrofit2:adapter-rxjava:jar:2.6.4:compile
+[INFO] |  +- com.microsoft.azure:azure-client-authentication:jar:1.7.12:compile
+[INFO] |  |  +- commons-codec:commons-codec:jar:1.15:compile
+[INFO] |  |  +- com.microsoft.azure:adal4j:jar:1.6.4:compile
+[INFO] |  |  |  \- com.nimbusds:oauth2-oidc-sdk:jar:9.9.1:compile
+[INFO] |  |  |     +- com.github.stephenc.jcip:jcip-annotations:jar:1.0-1:compile
+[INFO] |  |  |     +- com.nimbusds:content-type:jar:2.1:compile
+[INFO] |  |  |     +- com.nimbusds:lang-tag:jar:1.5:compile
+[INFO] |  |  |     \- com.nimbusds:nimbus-jose-jwt:jar:9.10.1:compile
+[INFO] |  |  \- com.microsoft.azure:azure-annotations:jar:1.10.0:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-resources:jar:1.41.1:compile
+[INFO] |  |  +- io.reactivex:rxjava:jar:1.3.8:compile
+[INFO] |  |  \- org.apache.httpcomponents:httpcore:jar:4.4.14:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-storage:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-network:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-compute:jar:1.41.1:compile
+[INFO] |  |  \- com.google.code.gson:gson:jar:2.8.8:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-graph-rbac:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-keyvault:jar:1.41.1:compile
+[INFO] |  |  \- com.microsoft.azure:azure-keyvault:jar:1.0.0:compile
+[INFO] |  |     \- com.microsoft.azure:azure-keyvault-webkey:jar:1.0.0:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-batch:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-trafficmanager:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-dns:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-redis:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-appservice:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-locks:jar:1.41.1:compile
+[INFO] |  +- javax.xml.bind:jaxb-api:jar:2.3.1:compile
+[INFO] |  |  \- javax.activation:javax.activation-api:jar:1.2.0:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-eventhub:jar:1.41.1:compile
+[INFO] |  |  \- com.microsoft.azure:azure-storage:jar:6.1.0:compile
+[INFO] |  |     \- com.microsoft.azure:azure-keyvault-core:jar:0.8.0:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-cdn:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-sql:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-containerinstance:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-containerregistry:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-containerservice:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-cosmosdb:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-search:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-msi:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-monitor:jar:1.41.1:compile
+[INFO] |  +- com.microsoft.azure:azure-mgmt-servicebus:jar:1.41.1:compile
+[INFO] |  |  \- joda-time:joda-time:jar:2.1:compile
+[INFO] |  \- com.microsoft.azure:azure-mgmt-batchai:jar:1.41.1:compile
+[INFO] +- com.microsoft.azure:applicationinsights-core:jar:3.4.7:compile
+[INFO] +- org.springframework.boot:spring-boot-starter:jar:2.5.6:compile
+[INFO] |  +- org.springframework.boot:spring-boot:jar:2.5.6:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:5.3.12:compile
+[INFO] |  +- org.springframework.boot:spring-boot-autoconfigure:jar:2.5.6:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-logging:jar:2.5.6:compile
+[INFO] |  |  +- ch.qos.logback:logback-classic:jar:1.2.6:compile
+[INFO] |  |  |  \- ch.qos.logback:logback-core:jar:1.2.6:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.14.1:compile
+[INFO] |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.14.1:compile
+[INFO] |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.32:compile
+[INFO] |  +- jakarta.annotation:jakarta.annotation-api:jar:1.3.5:compile
+[INFO] |  +- org.springframework:spring-core:jar:5.3.12:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:5.3.12:compile
+[INFO] |  \- org.yaml:snakeyaml:jar:1.28:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-tomcat:jar:2.5.6:compile
+[INFO] |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:9.0.54:compile
+[INFO] |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:9.0.54:compile
+[INFO] |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:9.0.54:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:2.5.6:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:2.5.6:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:2.5.6:test
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.5.0:test
+[INFO] |  |  \- net.minidev:json-smart:jar:2.4.7:compile
+[INFO] |  |     \- net.minidev:accessors-smart:jar:2.4.7:compile
+[INFO] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3:compile
+[INFO] |  |  \- jakarta.activation:jakarta.activation-api:jar:1.2.2:compile
+[INFO] |  +- org.assertj:assertj-core:jar:3.19.0:test
+[INFO] |  +- org.hamcrest:hamcrest:jar:2.2:test
+[INFO] |  +- org.junit.jupiter:junit-jupiter:jar:5.7.2:test
+[INFO] |  |  +- org.junit.jupiter:junit-jupiter-api:jar:5.7.2:test
+[INFO] |  |  |  +- org.apiguardian:apiguardian-api:jar:1.1.0:test
+[INFO] |  |  |  +- org.opentest4j:opentest4j:jar:1.2.0:test
+[INFO] |  |  |  \- org.junit.platform:junit-platform-commons:jar:1.7.2:test
+[INFO] |  |  +- org.junit.jupiter:junit-jupiter-params:jar:5.7.2:test
+[INFO] |  |  \- org.junit.jupiter:junit-jupiter-engine:jar:5.7.2:test
+[INFO] |  |     \- org.junit.platform:junit-platform-engine:jar:1.7.2:test
+[INFO] |  +- org.mockito:mockito-junit-jupiter:jar:3.9.0:test
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.5.0:test
+[INFO] |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[INFO] |  +- org.springframework:spring-test:jar:5.3.12:test
+[INFO] |  \- org.xmlunit:xmlunit-core:jar:2.8.3:test
+[INFO] +- org.springframework.boot:spring-boot-starter-aop:jar:2.5.6:compile
+[INFO] |  +- org.springframework:spring-aop:jar:5.3.12:compile
+[INFO] |  |  \- org.springframework:spring-beans:jar:5.3.12:compile
+[INFO] |  \- org.aspectj:aspectjweaver:jar:1.9.7:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-web:jar:2.5.6:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-json:jar:2.5.6:compile
+[INFO] |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.12.5:compile
+[INFO] |  |  \- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.12.5:compile
+[INFO] |  +- org.springframework:spring-web:jar:5.3.12:compile
+[INFO] |  \- org.springframework:spring-webmvc:jar:5.3.12:compile
+[INFO] |     \- org.springframework:spring-expression:jar:5.3.12:compile
+[INFO] +- org.apache.maven.plugins:maven-compiler-plugin:jar:3.8.1:compile
+[INFO] |  +- org.apache.maven:maven-plugin-api:jar:3.0:compile
+[INFO] |  |  +- org.apache.maven:maven-model:jar:3.0:compile
+[INFO] |  |  \- org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[INFO] |  |     \- org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[INFO] |  |        \- org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[INFO] |  +- org.apache.maven:maven-artifact:jar:3.0:compile
+[INFO] |  |  \- org.codehaus.plexus:plexus-utils:jar:2.0.4:compile
+[INFO] |  +- org.apache.maven:maven-core:jar:3.0:compile
+[INFO] |  |  +- org.apache.maven:maven-settings:jar:3.0:compile
+[INFO] |  |  +- org.apache.maven:maven-settings-builder:jar:3.0:compile
+[INFO] |  |  +- org.apache.maven:maven-repository-metadata:jar:3.0:compile
+[INFO] |  |  +- org.apache.maven:maven-model-builder:jar:3.0:compile
+[INFO] |  |  +- org.apache.maven:maven-aether-provider:jar:3.0:runtime
+[INFO] |  |  +- org.sonatype.aether:aether-impl:jar:1.7:compile
+[INFO] |  |  |  \- org.sonatype.aether:aether-spi:jar:1.7:compile
+[INFO] |  |  +- org.sonatype.aether:aether-api:jar:1.7:compile
+[INFO] |  |  +- org.sonatype.aether:aether-util:jar:1.7:compile
+[INFO] |  |  +- org.codehaus.plexus:plexus-interpolation:jar:1.14:compile
+[INFO] |  |  +- org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[INFO] |  |  +- org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[INFO] |  |  \- org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[INFO] |  |     \- org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[INFO] |  +- org.apache.maven.shared:maven-shared-utils:jar:3.2.1:compile
+[INFO] |  |  \- commons-io:commons-io:jar:2.5:compile
+[INFO] |  +- org.apache.maven.shared:maven-shared-incremental:jar:1.1:compile
+[INFO] |  +- org.codehaus.plexus:plexus-java:jar:0.9.10:compile
+[INFO] |  |  +- org.ow2.asm:asm:jar:6.2:compile
+[INFO] |  |  \- com.thoughtworks.qdox:qdox:jar:2.0-M8:compile
+[INFO] |  +- org.codehaus.plexus:plexus-compiler-api:jar:2.8.4:compile
+[INFO] |  +- org.codehaus.plexus:plexus-compiler-manager:jar:2.8.4:compile
+[INFO] |  \- org.codehaus.plexus:plexus-compiler-javac:jar:2.8.4:runtime
+[INFO] +- com.microsoft.azure:applicationinsights-runtime-attach:jar:3.3.0:compile
+[INFO] |  +- io.opentelemetry.contrib:opentelemetry-runtime-attach:jar:1.15.0-alpha:runtime
+[INFO] |  \- com.microsoft.azure:applicationinsights-agent:jar:3.3.0:runtime
+[INFO] +- org.mockito:mockito-core:jar:4.6.1:test
+[INFO] |  +- net.bytebuddy:byte-buddy-agent:jar:1.10.22:runtime
+[INFO] |  \- org.objenesis:objenesis:jar:3.2:test
+[INFO] +- org.mockito:mockito-inline:jar:2.13.0:test
+[INFO] \- net.bytebuddy:byte-buddy:jar:1.14.1:compile

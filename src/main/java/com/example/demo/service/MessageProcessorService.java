@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -65,6 +66,7 @@ public class MessageProcessorService {
     static int ii = 0;
 
     private void processMessage(ServiceBusReceivedMessage message) {
-        log.info("Message with id: {} has been processed. \n Session: {}", message.getMessageId(), message.getSessionId());
+        String body = new String(message.getBody().toBytes(), StandardCharsets.UTF_8);
+        log.info("Message with id: {} has been processed. \n Session: {}, Body: {}", message.getMessageId(), message.getSessionId(), body);
     }
 }

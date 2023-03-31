@@ -5,9 +5,11 @@ import java.util.Map;
 
 import com.azure.messaging.servicebus.ServiceBusReceivedMessage;
 import com.azure.messaging.servicebus.ServiceBusReceiverAsyncClient;
+import com.azure.messaging.servicebus.ServiceBusSessionReceiverAsyncClient;
 import com.example.demo.factory.ServiceBusReceiverFactory;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.var;
 import org.reactivestreams.Publisher;
 import org.springframework.stereotype.Service;
 import reactor.core.Disposable;
@@ -19,11 +21,10 @@ import reactor.core.publisher.Mono;
 @AllArgsConstructor
 public class MessageProcessorService {
     private final ServiceBusReceiverFactory serviceBusReceiverFactory;
-    public static final Map<String, Disposable> sessionDisposableMap = new HashMap<>();
 
-    public void registerSubscription(String sessionId) {
-        Mono<ServiceBusReceiverAsyncClient> monoReceiver = serviceBusReceiverFactory.getServiceBusReceiverClient(sessionId);
-        log.info("current session id: {}", sessionId);
+    public Disposable registerSubscription(ServiceBusSessionReceiverAsyncClient client, String sessionId) {
+        Mono<ServiceBusReceiverAsyncClient> monoReceiver = client.acceptSession(sessionId);
+        log.info("Registering subscription for current session id: {}", sessionId);
 
         Disposable subscription = Flux.usingWhen(
                         monoReceiver,
@@ -42,7 +43,7 @@ public class MessageProcessorService {
                         error -> log.error("Could not receive message over service bus. [session: {}, error: {}]", sessionId, error)
                 );
 
-        sessionDisposableMap.putIfAbsent(sessionId, subscription);
+        return subscription;
     }
 
     private Publisher<?> closeReceiver(ServiceBusReceiverAsyncClient receiver, String sessionId, String reason) {

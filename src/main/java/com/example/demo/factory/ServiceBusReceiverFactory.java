@@ -25,27 +25,14 @@ public class  ServiceBusReceiverFactory {
 
     @Value("${messaging.queueName}")
     private String queueName;
-    private static final int MAX_NUMBER_OF_SUBSCRIPTIONS_PER_RECEIVER = 255;
-    private static Map<String, ServiceBusSessionReceiverAsyncClient> sessionServiceBusSessionReceiverAsyncClientMap = new HashMap<>();
-    private static Map<ServiceBusSessionReceiverAsyncClient, Integer> serviceBusSessionReceiverAsyncClientCounterMap = new HashMap<>();
 
     public Mono<ServiceBusReceiverAsyncClient> getServiceBusReceiverClient(String sessionIndex) {
-        ServiceBusSessionReceiverAsyncClient serviceBusSessionReceiverClient = sessionServiceBusSessionReceiverAsyncClientMap.get(sessionIndex);
-        if (serviceBusSessionReceiverClient == null){
-            serviceBusSessionReceiverClient = getServiceBusReceiverClient();
-            sessionServiceBusSessionReceiverAsyncClientMap.put(sessionIndex, serviceBusSessionReceiverClient);
-            Integer activeConnections = serviceBusSessionReceiverAsyncClientCounterMap.getOrDefault(serviceBusSessionReceiverClient, 0);
-            serviceBusSessionReceiverAsyncClientCounterMap.put(serviceBusSessionReceiverClient, activeConnections+1);
-        }
-        try{
+
+            ServiceBusSessionReceiverAsyncClient serviceBusSessionReceiverClient = getNewServiceBusSessionReceiverAsyncClient();
             return serviceBusSessionReceiverClient.acceptSession(sessionIndex);
-        }catch (Exception e){
-            log.error("Error accepting session on serviceBusSessionReceiverClient for {} ", sessionIndex);
-            return Mono.empty();
-        }
     }
 
-    private ServiceBusSessionReceiverAsyncClient getNewServiceBusSessionReceiverAsyncClient(){
+    public ServiceBusSessionReceiverAsyncClient getNewServiceBusSessionReceiverAsyncClient(){
         return new ServiceBusClientBuilder()
                 .connectionString(connectionStringQueueListener)
                 .sessionReceiver()
@@ -53,15 +40,5 @@ public class  ServiceBusReceiverFactory {
                 .maxAutoLockRenewDuration(Duration.ofMinutes(5))
                 .queueName(queueName)
                 .buildAsyncClient();
-    }
-
-    private ServiceBusSessionReceiverAsyncClient getServiceBusReceiverClient() {
-        ServiceBusSessionReceiverAsyncClient currentClient = serviceBusSessionReceiverAsyncClientCounterMap.entrySet().stream().filter(x -> x.getValue() < MAX_NUMBER_OF_SUBSCRIPTIONS_PER_RECEIVER).map(Map.Entry::getKey).findFirst().orElse(null);
-        if (currentClient == null){
-            currentClient = getNewServiceBusSessionReceiverAsyncClient();
-            log.info("Created async azure service bus session receiver client. [clients={}, connectionString={}, queue={}]",
-                    sessionServiceBusSessionReceiverAsyncClientMap.size(), connectionStringQueueListener, queueName);
-        }
-        return  currentClient;
     }
 }
